@@ -9,6 +9,12 @@ public class Board {
     private final Map<Integer, Snake> snakes;
     private final Map<Integer, Ladder> ladders;
 
+    /**
+     *
+     * Can have a BoardBuilder that builds the board dynamically
+     * with random snakes and ladders present
+     */
+
     public Board(int row, int col, Map<Integer, Snake> snakes, Map<Integer, Ladder> ladders) {
         this.row = row;
         this.col = col;

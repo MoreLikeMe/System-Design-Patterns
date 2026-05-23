@@ -22,7 +22,7 @@ public class Main {
         Game game = new Game(board, dice, players);
         game.start();
 
-        while(game.rollDice()){
+        while(game.play()){
             System.out.println("Game On...");
         }
     }

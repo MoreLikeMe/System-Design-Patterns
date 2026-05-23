@@ -28,7 +28,7 @@ public class Game {
         displayCurrentPlayer();
     }
 
-    public boolean rollDice(){
+    public boolean play(){
         if(players.isEmpty()) {
             System.out.println("Game Not Started Yet...");
             return false;
