@@ -1,8 +1,6 @@
 package design.mc.jobscheduler.entity;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 import java.util.PriorityQueue;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,7 +28,7 @@ public class JobScheduler {
         }
 
         jobs.put(job.getJobId(), job);
-        scheduledJobs.offer(new ScheduledJob(job.getJobId(), job.getStartTime()));
+        scheduledJobs.offer(new ScheduledJob(job.getJobId(), job.getFirstRunTime()));
 
         System.out.println("Job Added");
     }

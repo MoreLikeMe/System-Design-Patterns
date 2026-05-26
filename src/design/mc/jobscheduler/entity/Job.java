@@ -29,7 +29,7 @@ public abstract class Job {
         return jobId;
     }
 
-    public LocalDateTime getStartTime(){
+    public LocalDateTime getFirstRunTime(){
         return strategy.getStartTime();
     }
 
