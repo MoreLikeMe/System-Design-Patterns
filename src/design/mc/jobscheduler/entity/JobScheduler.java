@@ -5,19 +5,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.PriorityQueue;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class JobScheduler {
 
-    private final Map<Integer, Job> jobs;
+    private final ConcurrentHashMap<Integer, Job> jobs;
     private final PriorityQueue<ScheduledJob> scheduledJobs;
     private boolean jobSchedulerOn;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public JobScheduler() {
-        this.jobs = new HashMap<>();
+        this.jobs = new ConcurrentHashMap<>();
         this.scheduledJobs = new PriorityQueue<>();
         this.jobSchedulerOn = true;
         executor.submit(this::start);
