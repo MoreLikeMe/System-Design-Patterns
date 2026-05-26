@@ -11,7 +11,7 @@ public class OrCondition implements Condition{
     }
 
     @Override
-    public boolean evaluate(Context context) {
+    public final boolean evaluate(Context context) {
         for(Condition condition: conditions){
             if(condition.evaluate(context)){
                 return true;
