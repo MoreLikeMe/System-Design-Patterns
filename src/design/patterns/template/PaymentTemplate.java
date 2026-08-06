@@ -9,7 +9,7 @@ public abstract class PaymentTemplate {
     abstract boolean doTransaction();
     abstract boolean doConfirmation();
 
-    boolean proceed(){
+    final boolean proceed(){
         initiate();
         fetchSender();
         fetchReceiver();
