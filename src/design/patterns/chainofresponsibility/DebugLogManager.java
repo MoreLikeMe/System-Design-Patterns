@@ -1,19 +1,18 @@
 package design.patterns.chainofresponsibility;
 
 public class DebugLogManager extends LogManager{
-    private final LogLevel LEVEL = LogLevel.DEBUG;
 
     DebugLogManager(LogManager nextManager){
-        this.nextLogManager = nextManager;
+        super(nextManager);
     }
 
     @Override
-    boolean isProcessableHere(LogLevel logLevel) {
-        return LEVEL.equals(logLevel);
+    protected LogLevel getLevel() {
+        return LogLevel.DEBUG;
     }
 
     @Override
-    void processHere(String message) {
+    protected void processHere(String message) {
         System.out.println("Debug: " + message);
     }
 }

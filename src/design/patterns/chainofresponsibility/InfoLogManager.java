@@ -1,19 +1,18 @@
 package design.patterns.chainofresponsibility;
 
 public class InfoLogManager extends LogManager{
-    private final LogLevel LEVEL = LogLevel.INFO;
 
     InfoLogManager(LogManager nextManager){
-        this.nextLogManager = nextManager;
+        super(nextManager);
     }
 
     @Override
-    boolean isProcessableHere(LogLevel logLevel) {
-        return LEVEL.equals(logLevel);
+    protected LogLevel getLevel() {
+        return LogLevel.INFO;
     }
 
     @Override
-    void processHere(String message) {
+    protected void processHere(String message) {
         System.out.println("INFO: " + message);
     }
 }
