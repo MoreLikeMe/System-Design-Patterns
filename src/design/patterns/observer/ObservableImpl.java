@@ -12,8 +12,8 @@ public class ObservableImpl<T> implements Observable<T> {
     }
 
     @Override
-    public void registerObserver(Observer<T> observable) {
-        list.add(observable);
+    public void registerObserver(Observer<T> observer) {
+        list.add(observer);
     }
 
     @Override
