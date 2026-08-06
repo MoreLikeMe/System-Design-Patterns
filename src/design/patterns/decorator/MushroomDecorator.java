@@ -4,11 +4,12 @@ public class MushroomDecorator extends PizzaDecorator{
     private Pizaa pizza;
 
     public MushroomDecorator(Pizaa pizza){
-        this.pizza = pizza;
+        super(pizza);
     }
 
     @Override
-    public int price() {
-        return pizza.price()+5;
+    int getDecoratedPrice() {
+        return 8;
     }
+
 }

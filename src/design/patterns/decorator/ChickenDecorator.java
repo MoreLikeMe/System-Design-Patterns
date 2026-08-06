@@ -1,14 +1,14 @@
 package design.patterns.decorator;
 
 public class ChickenDecorator extends PizzaDecorator{
-    private Pizaa pizza;
 
     public ChickenDecorator(Pizaa pizza){
-        this.pizza = pizza;
+        super(pizza);
     }
 
     @Override
-    public int price() {
-        return pizza.price()+7;
+    int getDecoratedPrice() {
+        return 10;
     }
+
 }
